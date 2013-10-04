@@ -1,4 +1,4 @@
-/*
+//*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -19,7 +19,8 @@ public class KataVector {
         HashMap<Integer, Integer> listFrecuency_Nomber = new HashMap();
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            list.add((int) Math.random() * 100);
+            int n=(int) (Math.random()*100);
+            list.add(n);
         }
          int nomber = list.get(0);
         int repeat = 0;
@@ -36,11 +37,16 @@ public class KataVector {
         nomber=0;
         repeat=-1111111;
         int  tem=0;
+        
         Set set = listFrecuency_Nomber.entrySet();
         Iterator iter = set.iterator();
         while (iter.hasNext()) {
-            if(iter.)
-        }
-        
+            Map.Entry entry = (Map.Entry) iter.next();
+            if((int) entry.getKey() > repeat){
+                nomber=(int)entry.getKey();
+                repeat=(int) entry.getValue();
+            }
+         }
+         System.out.println("el numero es:"+nomber+"y se repite"+repeat);
     }
 }
